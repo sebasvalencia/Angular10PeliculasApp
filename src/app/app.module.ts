@@ -1,18 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule, JsonpModule } from '@angular/http';
 
+//Servicios
+import { PeliculasService } from './services/peliculas.service';
 
+//Componentes
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
+import { BuscarComponent } from './components/buscar/buscar.component';
+
+//routes
+import { APP_ROUTING } from './app.routes';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    PeliculaComponent,
+    BuscarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    JsonpModule,
+    APP_ROUTING
   ],
-  providers: [],
+  providers: [PeliculasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
