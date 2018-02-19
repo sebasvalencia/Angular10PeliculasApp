@@ -11,6 +11,20 @@ export class PeliculasService {
 
   constructor(private jsonp:Jsonp, private http:Http) { }
 
+  getCartelera(){
+      let desde = new Date();
+      let hasta = new Date();
+      hasta.setDate( hasta.getDate() + 7);
+
+      let desdeStr = `${ desde.getFullYear() }-${ desde.getMonth()+1 }-${ desde.getDay() }`;
+      let hastaStr = `${ hasta.getFullYear() }-${ hasta.getMonth()+1 }-${ hasta.getDay() }`;
+      let url = `${ this.urlMoviedb }/movie/now_playing?api_key=${ this.apiKey }&language=en-US&callback=JSONP_CALLBACK`;
+
+      //let url = `${ this.urlMoviedb }/discover/movie?primary_release_date.gte=${ desdeStr }&primary_release_date.lte=${ hastaStr }&api_key=${ this.apiKey }&language=es&callback=JSONP_CALLBACK`;
+      return this.jsonp.get( url )
+                .map( res=> res.json());
+      
+    }
 
   getPopulares(){
     let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apiKey }&language=es&callback=JSONP_CALLBACK`;
