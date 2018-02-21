@@ -16,6 +16,9 @@ import { BuscarComponent } from './components/buscar/buscar.component';
 //routes
 import { APP_ROUTING } from './app.routes';
 
+//Pipes
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { APP_ROUTING } from './app.routes';
     NavbarComponent,
     HomeComponent,
     PeliculaComponent,
-    BuscarComponent
+    BuscarComponent,
+    PeliculaImagenPipe
   ],
   imports: [
     BrowserModule,
