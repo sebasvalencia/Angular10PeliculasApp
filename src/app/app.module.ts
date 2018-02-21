@@ -18,6 +18,7 @@ import { APP_ROUTING } from './app.routes';
 
 //Pipes
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+import { GaleriaComponent } from './components/home/galeria.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
     HomeComponent,
     PeliculaComponent,
     BuscarComponent,
-    PeliculaImagenPipe
+    PeliculaImagenPipe,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
