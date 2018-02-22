@@ -10,7 +10,7 @@ import { BuscarComponent } from './components/buscar/buscar.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'pelicula', component: PeliculaComponent },
+    { path: 'pelicula/:id/:pag', component: PeliculaComponent },
     { path: 'buscar', component: BuscarComponent },
     { path: 'buscar/:texto', component: BuscarComponent },
     { path: '**', pathMatch:'full', redirectTo:'home' }
